@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>Inliner</id>
+    <version>$version$</version>
+    <title>Inliner</title>
+    <authors>Cybermaxs</authors>
+    <owners>Cybermaxs</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/Cybermaxs/Inliner</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/Cybermaxs/Inliner/master/LICENSE</licenseUrl>
+    <description>Easily inline your scripts, styles, bundles when you *** NEED *** it.</description>
+    <summary>Easily inline your scripts, styles, bundles when you *** NEED *** it.</summary>
+    <copyright>Copyright 2016</copyright>
+    <tags>optimization bundling minification</tags>
+    <dependencies>
+        <dependency id="Microsoft.AspNet.Web.Optimization" version="1.1.3" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="src\RedisMemoryCacheInvalidation\bin\Release\RedisMemoryCacheInvalidation.dll" target="lib\net45" />
+    <file src="src\RedisMemoryCacheInvalidation\bin\Release\RedisMemoryCacheInvalidation.pdb" target="lib\net45" />
+    <file src="src\RedisMemoryCacheInvalidation_Net40\bin\Release\RedisMemoryCacheInvalidation.dll" target="lib\net40" />
+     <file src="src\RedisMemoryCacheInvalidation_Net40\bin\Release\RedisMemoryCacheInvalidation.pdb" target="lib\net40" />
+  </files>
+</package>
