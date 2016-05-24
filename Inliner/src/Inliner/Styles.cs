@@ -2,7 +2,7 @@
 
 namespace Inliner
 {
-    public static class InlineStyles
+    public static class Styles
     {
         private const string defaultTagFormat = "<style>{0}</style>";
 

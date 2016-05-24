@@ -63,8 +63,8 @@
     <Compile Include="IAssetResolver.cs" />
     <Compile Include="IBundleManager.cs" />
     <Compile Include="TagContent.cs" />
-    <Compile Include="InlineScripts.cs" />
-    <Compile Include="InlineStyles.cs" />
+    <Compile Include="Scripts.cs" />
+    <Compile Include="Styles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AssetResolver.cs" />
     <Compile Include="TagContentBuilder.cs" />

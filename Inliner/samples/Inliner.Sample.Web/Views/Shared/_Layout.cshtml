@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Inliner.InlineStyles.Render("~/Content/css")
-    @Inliner.InlineStyles.Render("~/Content/bootstrap-theme.css")
+    @Inliner.Styles.Render("~/Content/css")
+    @Inliner.Styles.Render("~/Content/bootstrap-theme.css")
 
-    @Inliner.InlineScripts.Render("~/bundles/modernizr", "~/Scripts/bootstrap.js")
-    @Inliner.InlineScripts.Render("~/Scripts")
+    @Inliner.Scripts.Render("~/bundles/modernizr", "~/Scripts/bootstrap.js")
+    @Inliner.Scripts.Render("~/Scripts")
 
 
 </head>

@@ -18,9 +18,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="src\RedisMemoryCacheInvalidation\bin\Release\RedisMemoryCacheInvalidation.dll" target="lib\net45" />
-    <file src="src\RedisMemoryCacheInvalidation\bin\Release\RedisMemoryCacheInvalidation.pdb" target="lib\net45" />
-    <file src="src\RedisMemoryCacheInvalidation_Net40\bin\Release\RedisMemoryCacheInvalidation.dll" target="lib\net40" />
-     <file src="src\RedisMemoryCacheInvalidation_Net40\bin\Release\RedisMemoryCacheInvalidation.pdb" target="lib\net40" />
+    <file src="src\Inliner\bin\Release\Inliner.dll" target="lib\net45" />
+    <file src="src\Inliner\bin\Release\Inliner.pdb" target="lib\net45" />
   </files>
 </package>

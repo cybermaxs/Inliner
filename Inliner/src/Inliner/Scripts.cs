@@ -2,7 +2,7 @@
 
 namespace Inliner
 {
-    public static class InlineScripts
+    public static class Scripts
     {
         private const string defaultTagFormat = "<script type=\"text/javascript\">{0}</script>";
 

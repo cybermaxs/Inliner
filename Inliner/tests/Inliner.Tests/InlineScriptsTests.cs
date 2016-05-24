@@ -8,7 +8,7 @@ namespace Inliner.Tests
         [Fact]
         public void Render_WhenNullPaths_ShouldReturnEmpty()
         {
-            var res = InlineScripts.Render(null);
+            var res = Scripts.Render(null);
 
             Assert.Equal(string.Empty, res.ToHtmlString());
 
@@ -17,7 +17,7 @@ namespace Inliner.Tests
         [Fact]
         public void Render_WhenEmptyPaths_ShouldReturnEmpty()
         {
-            var res = InlineScripts.Render(new string[] { });
+            var res = Scripts.Render(new string[] { });
 
             Assert.Equal(string.Empty, res.ToHtmlString());
 
