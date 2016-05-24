@@ -10,7 +10,7 @@ namespace Inliner.Tests
         [Fact]
         public void Render_WhenNullPaths_ShouldReturnEmpty()
         {
-            var res = EmbeddedStyles.Render(null);
+            var res = Styles.Render(null);
 
             Assert.Equal(string.Empty, res.ToHtmlString());
 
@@ -19,7 +19,7 @@ namespace Inliner.Tests
         [Fact]
         public void Render_WhenEmptyPaths_ShouldReturnEmpty()
         {
-            var res = EmbeddedStyles.Render(new string[] { });
+            var res = Styles.Render(new string[] { });
 
             Assert.Equal(string.Empty, res.ToHtmlString());
 
@@ -41,7 +41,7 @@ namespace Inliner.Tests
             new HttpResponse(null)));
 
 
-            var res = EmbeddedStyles.Render("~/dir/style.css");
+            var res = Styles.Render("~/dir/style.css");
 
             var ashtml = res.ToHtmlString();
             Assert.True(ashtml.Length > 0);
