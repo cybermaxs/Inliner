@@ -16,23 +16,26 @@ Inliner is a small library on the top of Microsoft.Web.Optimization (aka Bundles
 # Getting Started
 
 ## Embed a Bundle
+```
+// global.asax
+public static void RegisterBundles(BundleCollection bundles)
+{
+   bundles.Add(new StyleBundle("~/Content/css").Include(
+   "~/Content/bootstrap.css",
+   "~/Content/site.css"));
+}
 
-`// global.asax
-` public static void RegisterBundles(BundleCollection bundles)
-`{
-'   bundles.Add(new StyleBundle("~/Content/css").Include(
-`   "~/Content/bootstrap.css",
-`   "~/Content/site.css"));
-`}
+// _layout.cshtml
+@Inliner.Styles.Render("~/Content/css")
 
-`// _layout.cshtml
-`@Inliner.InlineStyles.Render("~/Content/css")
-
+```
 ## Embed a file
-`// _layout.cshtml
-`@Inliner.InlineScripts.Render("~/Scripts/main.js")
-
+```
+// _layout.cshtml
+@Inliner.Scripts.Render("~/Scripts/main.js")
+```
 ## Embed a directory
-`// _layout.cshtml
-`@Inliner.InlineScripts.Render("~/Scripts")
- 
+```
+// _layout.cshtml
+@Inliner.Scripts.Render("~/Scripts")
+``` 
