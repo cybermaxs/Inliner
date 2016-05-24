@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
-using System.Web.Hosting;
-using System.Web.Optimization;
 
 namespace Inliner
 {
     internal interface IAssetResolver
     {
+        /// <summary>
+        /// Resolve all virtual paths.
+        /// </summary>
+        /// <param name="paths">List of requested virtual paths.</param>
+        /// <returns>List of Assets</returns>
         IEnumerable<Asset> ResolveUrls(string[] paths);
-        Bundle GetBundle(string vpath);
-        VirtualFile GetVirtualFile(string vpath);
     }
 }

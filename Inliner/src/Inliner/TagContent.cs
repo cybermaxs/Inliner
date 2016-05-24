@@ -2,7 +2,7 @@
 
 namespace Inliner
 {
-    internal class InlinerResponse
+    internal class TagContent
     {
         public bool HasContent
         {
@@ -15,16 +15,15 @@ namespace Inliner
 
         private StringBuilder builder;
 
-        public InlinerResponse()
+        public TagContent()
         {
             builder = new StringBuilder();
         }
 
-        public void Append(string path, string content, string concatenationToken)
+        public void Append(string path, string content)
         {
-            //builder.AppendFormat("/* file : {0} */\r\n",path);
+            builder.AppendFormat("/* content for : {0} */\r\n",path);
             builder.Append(content);
-            builder.Append(concatenationToken);
         }
     }
 }

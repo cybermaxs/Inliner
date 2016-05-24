@@ -2,7 +2,7 @@
 {
     internal enum AssetType
     {
-        Undefined,
+        Undefined=0,
         Script,
         Stylesheet,
         Bundle

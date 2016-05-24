@@ -58,17 +58,17 @@
   <ItemGroup>
     <Compile Include="AssertType.cs" />
     <Compile Include="Asset.cs" />
-    <Compile Include="DefaultTransform.cs" />
-    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="DefaultBundleManager.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="IAssetResolver.cs" />
-    <Compile Include="InlinerResponse.cs" />
+    <Compile Include="IBundleManager.cs" />
+    <Compile Include="TagContent.cs" />
     <Compile Include="InlineScripts.cs" />
     <Compile Include="InlineStyles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AssetResolver.cs" />
-    <Compile Include="ResponseBuilder.cs" />
-    <Compile Include="TransformOutput.cs" />
-    <Compile Include="Utils.cs" />
+    <Compile Include="TagContentBuilder.cs" />
+    <Compile Include="VirtualPathHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

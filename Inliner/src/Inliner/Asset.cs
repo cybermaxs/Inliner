@@ -1,8 +1,14 @@
 ﻿namespace Inliner
 {
-    internal class Asset
+    internal struct Asset
     {
-        public string VirtualPath { get; set; }
-        public AssetType Type {get;set;}
+        public string VirtualPath { get; private set; }
+        public AssetType Type {get; private set; }
+
+        public Asset(string virtualPath, AssetType type)
+        {
+            VirtualPath = virtualPath;
+            Type = type;
+        }
     }
 }
