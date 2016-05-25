@@ -4,12 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+
     @Inliner.Styles.Render("~/Content/css")
     @Inliner.Styles.Render("~/Content/bootstrap-theme.css")
-
-    @Inliner.Scripts.Render("~/bundles/modernizr", "~/Scripts/bootstrap.js")
-    @Inliner.Scripts.Render("~/Scripts")
-
+    @Inliner.Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
@@ -41,8 +39,8 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Inliner.Scripts.Render("~/bundles/jquery")
+    @Inliner.Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>

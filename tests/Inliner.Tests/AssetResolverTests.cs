@@ -9,24 +9,23 @@ namespace Inliner.Tests
     {
         public AssetResolverTests()
         {
-            TestVirtualPathProvider = new TestVirtualPathProvider();
-            BundleManager = new DefaultBundleManager();
-            BundleManager.VirtualPathProvider = TestVirtualPathProvider;
-            Resolver = new AssetResolver(BundleManager);
+            testVirtualPathProvider = new TestVirtualPathProvider();
+            bundleManager = new DefaultBundleManager();
+            bundleManager.VirtualPathProvider = testVirtualPathProvider;
+            resolver = new AssetResolver(bundleManager);
         }
 
-        private TestVirtualPathProvider TestVirtualPathProvider { get; set; }
-        private AssetResolver Resolver { get; set; }
-        internal DefaultBundleManager BundleManager { get; private set; }
-
+        private readonly TestVirtualPathProvider testVirtualPathProvider;
+        private readonly AssetResolver resolver;
+        private readonly DefaultBundleManager bundleManager;
         [Fact]
         public void Files()
         {
-            TestVirtualPathProvider.AddFile(new TestVirtualPathProvider.TestVirtualFile("/file1.js", string.Empty));
-            TestVirtualPathProvider.AddFile(new TestVirtualPathProvider.TestVirtualFile("/file2.css", string.Empty));
+            testVirtualPathProvider.AddFile(new TestVirtualPathProvider.TestVirtualFile("/file1.js", string.Empty));
+            testVirtualPathProvider.AddFile(new TestVirtualPathProvider.TestVirtualFile("/file2.css", string.Empty));
 
             var paths = new string[] { "~/file1.js", "~/file2.css" };
-            var assets = Resolver.ResolveUrls(paths);
+            var assets = resolver.ResolveUrls(paths);
 
             Assert.Equal(2, assets.Count());
             Assert.Contains(new Asset("~/file1.js", AssetType.Script), assets);
@@ -39,9 +38,9 @@ namespace Inliner.Tests
             var vdir = new TestVirtualPathProvider.TestVirtualDirectory("/dir");
             vdir.DirectoryFiles.Add(new TestVirtualPathProvider.TestVirtualFile("/dir/file1.js", string.Empty));
             vdir.DirectoryFiles.Add(new TestVirtualPathProvider.TestVirtualFile("/dir/file2.css", string.Empty));
-            TestVirtualPathProvider.AddDirectory(vdir);
+            testVirtualPathProvider.AddDirectory(vdir);
             var paths = new string[] { "~/dir" };
-            var assets = Resolver.ResolveUrls(paths);
+            var assets = resolver.ResolveUrls(paths);
 
             Assert.Equal(2, assets.Count());
             Assert.Contains(new Asset("~/dir/file1.js", AssetType.Script), assets);
@@ -52,7 +51,7 @@ namespace Inliner.Tests
         public void MissingFiles_ShouldReturn_EmptyResults()
         {
             var paths = new string[] { "~/file1.js", "~/file2.js" };
-            var assets = Resolver.ResolveUrls(paths);
+            var assets = resolver.ResolveUrls(paths);
 
             Assert.Equal(0, assets.Count());
         }
@@ -60,10 +59,10 @@ namespace Inliner.Tests
         [Fact]
         public void Bundles()
         {
-            BundleManager.RegisterNewBundle(new ScriptBundle("~/scripts").Include("~/file1.js", "~/file2.js"));
-            BundleManager.RegisterNewBundle(new StyleBundle("~/styles").Include("~/style1.css", "~/style2.css"));
+            bundleManager.RegisterNewBundle(new ScriptBundle("~/scripts").Include("~/file1.js", "~/file2.js"));
+            bundleManager.RegisterNewBundle(new StyleBundle("~/styles").Include("~/style1.css", "~/style2.css"));
             var paths = new string[] { "~/scripts", "~/styles" };
-            var assets = Resolver.ResolveUrls(paths);
+            var assets = resolver.ResolveUrls(paths);
 
             Assert.Equal(2, assets.Count());
             Assert.Contains(new Asset("~/scripts", AssetType.Bundle), assets);

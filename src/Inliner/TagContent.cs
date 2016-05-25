@@ -20,10 +20,12 @@ namespace Inliner
             builder = new StringBuilder();
         }
 
-        public void Append(string path, string content)
+        public void Append(Asset asset, string content, string contentType)
         {
-            builder.AppendFormat("/* content for : {0} */\r\n",path);
+            //builder.AppendFormat("/* content for : {0} */\r\n",path);
             builder.Append(content);
+            if (contentType == Constants.ContentTypes.Javascript)
+                builder.Append(";");
         }
     }
 }

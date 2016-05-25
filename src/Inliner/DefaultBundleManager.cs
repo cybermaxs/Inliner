@@ -7,8 +7,8 @@ namespace Inliner
     internal class DefaultBundleManager : IBundleManager
     {
         #region HttpContext
-        private static HttpContextBase _context;
-        public static HttpContextBase Context
+        private HttpContextBase _context;
+        public HttpContextBase Context
         {
             get
             {
@@ -30,7 +30,7 @@ namespace Inliner
         public VirtualPathProvider VirtualPathProvider
         {
             get { return _virtualPathProvider ?? BundleTable.VirtualPathProvider; }
-            set { _virtualPathProvider = value; }
+            set { _virtualPathProvider = value;BundleTable.VirtualPathProvider = value; }
         }
 
         /// <summary>

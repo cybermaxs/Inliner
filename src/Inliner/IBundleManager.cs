@@ -1,4 +1,5 @@
-﻿using System.Web.Hosting;
+﻿using System.Web;
+using System.Web.Hosting;
 using System.Web.Optimization;
 
 namespace Inliner
@@ -11,5 +12,6 @@ namespace Inliner
         Bundle GetBundle(Asset asset);
         BundleResponse GetBundleResponse(Asset asset);
         void RegisterNewBundle(Bundle bundle);
+        HttpContextBase Context { get; }
     }
 }

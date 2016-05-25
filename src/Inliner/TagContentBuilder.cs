@@ -41,7 +41,7 @@ namespace Inliner
             foreach (var asset in assets)
             {
                 var bundleResponse = BundleManager.GetBundleResponse(asset);
-                response.Append(asset.VirtualPath, bundleResponse.Content);
+                response.Append(asset, bundleResponse.Content, bundleResponse.ContentType);
             }
 
             return response;
